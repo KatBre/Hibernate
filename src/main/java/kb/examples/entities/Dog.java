@@ -19,6 +19,12 @@ public class Dog {
     public Dog() {
     }
 
+    public Dog(String name, String race, Integer age) {
+        this.name = name;
+        this.race = race;
+        this.age = age;
+    }
+
     public Long getId() {
         return id;
     }
