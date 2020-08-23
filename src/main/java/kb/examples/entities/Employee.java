@@ -6,12 +6,16 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "employee_table")                                 // definiujemy nazwę tabeli, inaczej nazwa jest określana na podstawie nazwy klasy
+@Table(name = "employee_table")
+// definiujemy nazwę tabeli, inaczej nazwa jest określana na podstawie nazwy klasy
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
+    @Embedded
+    Address address;
 
     @Column(nullable = false)                                   // wartość nie może być null, w przypadku próby zapisu encji z wartością tego pola null, rzuci wyjątkiem
             String name;
@@ -31,10 +35,11 @@ public class Employee {
     @Enumerated(value = EnumType.STRING)                        // przykłądowe użycie pozwala na zapisanie wartości enumów w bazie danych w postaci String'a
             Gender gender;                                              // bez tak użytej adnotacji enum byłby przechowywana jako Integer
 
-    @Lob                                                        // adnotacja @Lob (Large object) informuje, że pole zawiera duże ilości danych - może być użyta do typu znakowego (np. String) lub binarnego (np. byte[])
+    @Lob
+    // adnotacja @Lob (Large object) informuje, że pole zawiera duże ilości danych - może być użyta do typu znakowego (np. String) lub binarnego (np. byte[])
     @Basic(fetch = FetchType.LAZY)                              // przykłądowe użycie adnotacji @Basic pozwala na leniwe załadowanie danych:
             String description;                                         // podczas ładowania wszystkich innych pól encji z bazy danychto to pole nie jest wypełnione
-                                                                // dopiero podczas bezpośredniego odwołania się do pola przez np. getDescription() dane są pobierane do encji z bazy danych
+    // dopiero podczas bezpośredniego odwołania się do pola przez np. getDescription() dane są pobierane do encji z bazy danych
 
     public Employee() {
     }
@@ -49,7 +54,7 @@ public class Employee {
         this.description = description;
     }
 
-    public enum Gender {
-        MALE, FEMALE
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
