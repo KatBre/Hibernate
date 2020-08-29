@@ -15,5 +15,7 @@
         <mapping class="kb.examples.entities.Husband"/>
         <mapping class="kb.examples.entities.Book"/>
         <mapping class="kb.examples.entities.Client"/>
+        <mapping class="kb.examples.entities.School"/>
+        <mapping class="kb.examples.entities.Student"/>
     </session-factory>
 </hibernate-configuration>

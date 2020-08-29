@@ -32,7 +32,7 @@ public class Client {
 
     public void addBook(Book book) {                                                // każde dodanie Book do kolekcji books nie zostanie zmapowane jako relacja do bazy danych
         book.setClient(this);                                                       // dlatego właścicel relacji, czyli encja Book musi mieć ustawioną obecną encję Client
-        books.add(book);
+        this.books.add(book);
     }
 
     public Set<Book> getBooks() {
