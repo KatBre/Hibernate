@@ -11,5 +11,7 @@
         <property name="use.sql_comments">true</property>
         <mapping class="kb.examples.entities.Dog"/>
         <mapping class="kb.examples.entities.Employee"/>
+        <mapping class="kb.examples.entities.Wife"/>
+        <mapping class="kb.examples.entities.Husband"/>
     </session-factory>
 </hibernate-configuration>
