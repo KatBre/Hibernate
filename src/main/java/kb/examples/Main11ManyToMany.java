@@ -2,8 +2,7 @@ package kb.examples;
 
 import kb.examples.entities.School;
 import kb.examples.entities.Student;
-import org.hibernate.*
-        ;
+import org.hibernate.*;
 
 public class Main11ManyToMany {
 

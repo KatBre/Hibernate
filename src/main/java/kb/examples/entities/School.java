@@ -22,6 +22,14 @@ public class School {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void addStudent(Student student) {                                                       // dodanie encji Student do kolekcji students nie zostanie odzwierciedlone w bazie danych
         student.addSchool(this);                                                                    // gdyż to kolekcja schools w encji Student określa relację
         students.add(student);
